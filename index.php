@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>BSA Developer Test</title>
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 	<link rel="stylesheet" href="dist/css/index.css">
 </head>
