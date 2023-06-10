@@ -9,12 +9,17 @@ require('dotenv').config()
  */
 
 module.exports = {
-
 	// Project options.
 	projectURL: process.env.DEVELOPMENT_DOMAIN,
 	productURL: './',
 	browserAutoOpen: false,
 	injectChanges: true,
+
+	// FTP
+	ftpHost:           'ftp.foxartbox.com',
+	ftpPassword:       'CJ6qVhd9UyWAaDw',
+	ftpPort:           21,
+	ftpUser:           'test@foxartbox.com',
 
 	// Style options.
 	styleSRC: './src/scss/index.scss', // Path to main .scss file.

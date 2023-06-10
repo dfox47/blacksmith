@@ -27,6 +27,9 @@ const config = require('./gulp.config.js');
  */
 const gulp = require('gulp');
 
+const fs              = require('fs')
+const ftp             = require('vinyl-ftp')
+
 // CSS related plugins.
 const sass      = require('gulp-sass')(require('sass'));
 const cssnano   = require('cssnano');
@@ -42,18 +45,38 @@ const uglify    = require('gulp-uglify');
 const babel     = require('gulp-babel');
 
 // Utility related plugins.
-const rename = require('gulp-rename');
-const lineec = require('gulp-line-ending-corrector');
-const filter = require('gulp-filter');
-const sourcemaps = require('gulp-sourcemaps');
-const notify = require('gulp-notify');
-const browserSync = require('browser-sync').create();
-const cache = require('gulp-cache');
-const plumber = require('gulp-plumber');
-const beep = require('beepbeep');
-const gulpif = require('gulp-if');
-const {watchStyles, watchJsCustom, watchPhp} = require("./gulp.config");
-const argv = require('yargs').argv;
+const rename        = require('gulp-rename');
+const lineec        = require('gulp-line-ending-corrector');
+const filter        = require('gulp-filter');
+const sourcemaps    = require('gulp-sourcemaps');
+const notify        = require('gulp-notify');
+const browserSync   = require('browser-sync').create();
+const cache         = require('gulp-cache');
+const plumber       = require('gulp-plumber');
+const beep          = require('beepbeep');
+const gulpif        = require('gulp-if');
+const {watchStyles, watchJsCustom, watchPhp, ftpHost, ftpPort, ftpUser, ftpPassword} = require("./gulp.config");
+const argv          = require('yargs').argv;
+
+// FTP config
+const host            = ftpHost
+const password        = ftpPassword
+const port            = ftpPort
+const user            = ftpUser
+
+// FTP connect
+function getFtpConnection() {
+	return ftp.create({
+		host:           host,
+		password:       password,
+		parallel:       3,
+		port:           port,
+		timeout:        99999999,
+		user:           user
+	});
+}
+
+const conn = getFtpConnection()
 
 // Variables Used within Build Process
 const isProduction = (argv.production !== undefined);
@@ -135,7 +158,7 @@ gulp.task('styles', () => {
 		.pipe(filter('**/*.css')) // Filtering stream to only css files.
 		.pipe(gulpif(!isProduction, browserSync.stream())) // Reloads style.css if that is enqueued.
 		// .pipe(notify({message: '\n\n===> Styles Compiled\n', onLast: true}));
-});
+})
 
 /**
  * Task: `stylesRTL`.
@@ -229,16 +252,34 @@ gulp.task('php', function() {
 	})
 })
 
+// copy CSS to FTP
+gulp.task('copyCSS', () => {
+	return gulp.src( 'dist/css/**/*')
+		.pipe(conn.dest('dist/css'))
+})
+
+// copy JS to FTP
+gulp.task('copyJS', () => {
+	return gulp.src( 'dist/js/**/*')
+		.pipe(conn.dest('dist/js'))
+})
+
+// copy template parts to FTP
+gulp.task('copyTemplateParts', () => {
+	return gulp.src( 'template-parts/**/*')
+		.pipe(conn.dest('template-parts/'))
+})
+
 gulp.task('browserSync2', function() {
-	php.server({}, function (){
+	php.server({}, function () {
 		browserSync.init({
 			proxy: '127.0.0.1:8000'
 		})
 	})
 
-	gulp.watch(watchStyles,             gulp.series('styles', reload))
-	gulp.watch(watchJsCustom,           gulp.series('customJS', reload))
-	gulp.watch([watchPhp, '*.html'],    gulp.series(reload))
+	gulp.watch(watchStyles,             gulp.series('styles', 'copyCSS', reload))
+	gulp.watch(watchJsCustom,           gulp.series('customJS', 'copyJS', reload))
+	gulp.watch([watchPhp, '*.html'],    gulp.series(reload, 'copyTemplateParts'))
 })
 
 gulp.task('default', gulp.series(
