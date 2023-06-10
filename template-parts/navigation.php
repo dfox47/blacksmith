@@ -91,7 +91,7 @@
 					<span class="navigation-company-info__title">Company Name</span>
 
 					<address class="navigation-company-info__address">
-						<a href="#" class="navigation-company-info__address-link" target="_blank" ref="nofollow noopener noreferrer">
+						<a href="#" class="navigation-company-info__address-link" target="_blank" rel="nofollow noopener noreferrer">
 							<span class="navigation-company-info__address-street">123 Company Address</span>
 							<span class="navigation-company-info__address-city">City, State 55555</span>
 						</a>
