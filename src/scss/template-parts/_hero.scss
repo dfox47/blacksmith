@@ -127,7 +127,7 @@
 	&__media {
 		position: relative;
 		z-index: 2;
-		margin-bottom: rem-calc(47);
+		margin-bottom: rem-calc(44);
 
 		@include media('>phone-small') {
 			width: 49.6%;
@@ -200,12 +200,24 @@
 			}
 		}
 
-		&-top,
-		&-bottom {
+		&-bottom,
+		&-top {
 			@include ratio(179, 179);
+
+			position: absolute;
+			width: 32%;
+			z-index: 3;
+		}
+
+		&-bottom {
+			bottom: 18px;
+			left: -16px;
 		}
 
 		&-top {
+			right: 0;
+			top: 40px;
+
 			&::before {
 				@extend %dots-pattern;
 
