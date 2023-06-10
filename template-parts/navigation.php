@@ -21,7 +21,9 @@
 								<span class="navigation-menu__indicator">01</span>
 								<span class="navigation-menu__label">Services</span>
 							</a>
+
 							<button class="navigation-menu__submenu-toggle">Open Submenu</button>
+
 							<ul class="navigation-menu__submenu">
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
@@ -101,6 +103,7 @@
 				<a href="#" class="navigation__cta navigation-cta">
 					<span class="navigation-cta__text">Contact Us</span>
 				</a>
+
 				<?php include('social-links.php'); ?>
 			</div>
 		</div>
