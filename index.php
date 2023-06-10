@@ -20,6 +20,7 @@
 </main>
 
 <?php include_once('template-parts/footer.php'); ?>
+
 <script src="dist/js/index.js" defer></script>
 </body>
 </html>
