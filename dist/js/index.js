@@ -21,7 +21,18 @@
     function srcJsIndexJs(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
-      eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/navigation */ \"./src/js/lib/navigation.js\");\n/* harmony import */ var _lib_navigation__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_navigation__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_testimonials_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/testimonials-carousel */ \"./src/js/lib/testimonials-carousel.js\");\n\n\n\n\n//# sourceURL=webpack://frontend-dev-test/./src/js/index.js?");
+      eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_imgScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/imgScroll */ \"./src/js/lib/imgScroll.js\");\n/* harmony import */ var _lib_imgScroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_imgScroll__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/navigation */ \"./src/js/lib/navigation.js\");\n/* harmony import */ var _lib_navigation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_navigation__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _lib_scrollTo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/scrollTo */ \"./src/js/lib/scrollTo.js\");\n/* harmony import */ var _lib_scrollTo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib_scrollTo__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _lib_testimonials_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/testimonials-carousel */ \"./src/js/lib/testimonials-carousel.js\");\n\n\n\n\n\n//# sourceURL=webpack://frontend-dev-test/./src/js/index.js?");
+
+      /***/
+    },
+
+    /***/"./src/js/lib/imgScroll.js":
+    /*!*********************************!*\
+      !*** ./src/js/lib/imgScroll.js ***!
+      \*********************************/
+    /***/
+    function srcJsLibImgScrollJs() {
+      eval("const imgScroll = () => {\n\tdocument.querySelectorAll('.js-img-scroll').forEach((e) => {\n\t\tif (window.pageYOffset + window.innerHeight > e.getBoundingClientRect().top) {\n\t\t\te.classList.remove('js-img-scroll')\n\n\t\t\t// create img element\n\t\t\tlet $img            = document.createElement('img')\n\t\t\tlet $classList      = e.className\n\n\t\t\t// copy all classes from span to img\n\t\t\tif ($classList) {\n\t\t\t\t$classList.split(' ').forEach((c) => {\n\t\t\t\t\t$img.classList.add(c)\n\t\t\t\t})\n\t\t\t}\n\n\t\t\tif (e.dataset.src) {\n\t\t\t\t$img.src = e.dataset.src\n\n\t\t\t\t// alt text\n\t\t\t\t$img.alt = e.title ? e.title : ''\n\n\t\t\t\t// append img\n\t\t\t\te.after($img)\n\n\t\t\t\t// remove main element (span)\n\t\t\t\te.remove()\n\t\t\t}\n\t\t}\n\t})\n}\n\nimgScroll()\n\nwindow.addEventListener('orientationChange', imgScroll)\n\nwindow.addEventListener('resize', imgScroll)\n\nwindow.addEventListener('scroll', imgScroll)\n\n\n//# sourceURL=webpack://frontend-dev-test/./src/js/lib/imgScroll.js?");
 
       /***/
     },
@@ -33,6 +44,17 @@
     /***/
     function srcJsLibNavigationJs() {
       eval("(function () {\n\tconst siteNavigation = document.getElementById('navigation');\n\tconst mobileNavTrigger = document.getElementById('navigation-header-mobile-toggle');\n\tconst mobileNavTriggerTitle = document.getElementById('navigation-header-mobile-toggle-title');\n\tconst submenuToggleButtons = document.querySelectorAll('.navigation-menu__submenu-toggle');\n\tlet mobileMenuOpen = false;\n\n\t// Mobile Menu Toggle Active\n\tfunction toggleMobileActive () {\n\t\tsiteNavigation.classList.toggle('navigation--mobile-active');\n\t\tmobileNavTriggerTitle.innerHTML = mobileMenuOpen ? 'Close' : 'Menu';\n\t}\n\n\t// Toggle Submenu Elements\n\tfunction toggleSubmenuActive (submenuParent) {\n\t\tsubmenuParent.classList.toggle('navigation-menu__item--submenu-active');\n\t}\n\n\t// Adding Event Listeners to Touch and Click Events\n\tfunction setupClickEventListener (element, functionCall) {\n\t\tif (typeof window.ontouchstart === 'undefined') {\n\t\t\telement.addEventListener('click', functionCall)\n\t\t}\n\t\telse {\n\t\t\telement.addEventListener('touchstart', functionCall)\n\t\t}\n\t}\n\n\t// Set Sticky Navigation on Scroll\n\tfunction setStickyNav (currentScroll) {\n\t\tif (currentScroll > 0) {\n\t\t\tsiteNavigation.classList.add('navigation--sticky')\n\t\t}\n\t\telse {\n\t\t\tsiteNavigation.classList.remove('navigation--sticky')\n\t\t}\n\t}\n\n\t// Add Event Listener to Window to Check if Navigation Has Scrolled\n\tfunction handleScroll () {\n\t\tconst currentScroll = document.scrollingElement ? document.scrollingElement.scrollTop : document.documentElement.scrollTop\n\n\t\tsetStickyNav(currentScroll)\n\t}\n\n\t// Initialize Mobile Menu Toggle Event\n\tsetupClickEventListener(mobileNavTrigger, toggleMobileActive)\n\n\t// Initialize Submenu Toggle Event\n\tfor (let i = 0; i < submenuToggleButtons.length;  i++) {\n\t\tsetupClickEventListener(submenuToggleButtons[i], () => {\n\t\t\tconst submenuParent = submenuToggleButtons[i].closest('.navigation-menu__item--has-submenu')\n\t\t\ttoggleSubmenuActive(submenuParent)\n\t\t})\n\t}\n\n\t// Add Event Listener to Window to Check if Navigation Has Scrolled\n\twindow.addEventListener('scroll', handleScroll)\n})();\n\n\n//# sourceURL=webpack://frontend-dev-test/./src/js/lib/navigation.js?");
+
+      /***/
+    },
+
+    /***/"./src/js/lib/scrollTo.js":
+    /*!********************************!*\
+      !*** ./src/js/lib/scrollTo.js ***!
+      \********************************/
+    /***/
+    function srcJsLibScrollToJs() {
+      eval("const scrollTo = document.querySelectorAll('.js-scroll-to')\n\nscrollTo.forEach((e) => {\n\te.addEventListener('click', (link) => {\n\t\tlink.preventDefault()\n\n\t\tconst $block = document.getElementById(e.getAttribute('href').replace('#', ''))\n\n\t\tif ($block) {\n\t\t\twindow.scrollTo({\n\t\t\t\tbehavior:   'smooth',\n\t\t\t\ttop:        $block.offsetTop - 100\n\t\t\t})\n\t\t}\n\t})\n})\n\n\n//# sourceURL=webpack://frontend-dev-test/./src/js/lib/scrollTo.js?");
 
       /***/
     },
