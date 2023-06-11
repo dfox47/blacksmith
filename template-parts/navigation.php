@@ -17,7 +17,7 @@
 				<nav id="navigation-menu" class="navigation__menu navigation-menu">
 					<ul class="navigation-menu__list">
 						<li class="navigation-menu__item navigation-menu__item--has-submenu">
-							<a href="#" class="navigation-menu__link">
+							<a href="#footer" class="navigation-menu__link js-scroll-to">
 								<span class="navigation-menu__indicator">01</span>
 								<span class="navigation-menu__label">Services</span>
 							</a>
@@ -27,59 +27,68 @@
 							<ul class="navigation-menu__submenu">
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Welding</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Inspection</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Coating</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Personnel Training</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Consulting</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item">
 									<a href="#" class="navigation-menu__submenu-link">
-										<img src="src/images/general/welding-icon.svg" alt=""  class="navigation-menu__submenu-icon">
+										<img src="src/images/general/welding-icon.svg" alt="" class="navigation-menu__submenu-icon">
 										<span class="navigation-menu__submenu-label">Project Management</span>
 									</a>
 								</li>
+
 								<li class="navigation-menu__submenu-item navigation-menu__submenu-item--cta">
 									<a href="#" class="navigation-menu__submenu-cta">View All Services</a>
 								</li>
 							</ul>
 						</li>
+
 						<li class="navigation-menu__item">
-							<a href="#" class="navigation-menu__link">
+							<a href="#openings" class="navigation-menu__link js-scroll-to">
 								<span class="navigation-menu__indicator">02</span>
 								<span class="navigation-menu__label">Experience</span>
 							</a>
 						</li>
+
 						<li class="navigation-menu__item">
-							<a href="#" class="navigation-menu__link">
+							<a href="#culture" class="navigation-menu__link js-scroll-to">
 								<span class="navigation-menu__indicator">03</span>
 								<span class="navigation-menu__label">Company</span>
 							</a>
 						</li>
+
 						<li class="navigation-menu__item">
-							<a href="#" class="navigation-menu__link">
+							<a href="#testimonials" class="navigation-menu__link js-scroll-to">
 								<span class="navigation-menu__indicator">04</span>
 								<span class="navigation-menu__label">Careers</span>
 							</a>
@@ -100,9 +109,7 @@
 					<a href="tel:5555555555" class="navigation-company-info__phone">(555) 555-5555</a>
 				</div>
 
-				<a href="#" class="navigation__cta navigation-cta">
-					<span class="navigation-cta__text">Contact Us</span>
-				</a>
+				<a href="#footer" class="navigation__cta navigation-cta js-scroll-to"><span class="navigation-cta__text">Contact Us</span></a>
 
 				<?php include('social-links.php'); ?>
 			</div>

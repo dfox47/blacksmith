@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer id="footer" class="footer">
 	<div class="footer__inner">
 		<div class="footer__main">
 			<div class="footer__main-company footer-company">

@@ -28,7 +28,7 @@
 
 			<p class="hero-content__text">Our goal is to provide the industry with the highest quality welding and fabrication support. We support our goal with our team of highly qualified welding engineers utilizing premier welding equipment</p>
 
-			<a href="#" class="hero-content__button">View All Open Positions</a>
+			<a href="#openings" class="hero-content__button js-scroll-to">View All Open Positions</a>
 		</div>
 	</div>
 </section>
