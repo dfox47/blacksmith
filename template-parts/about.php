@@ -27,13 +27,16 @@
 	</div>
 
 	<div class="about__cards about-cards">
-		<?php for($i = 1; $i < 5; $i++) : ?>
+		<?php for($i = 1; $i < 6; $i++) : ?>
 			<article class="card-item">
 				<div class="card-item__decoration card-item-decoration" aria-hidden="true">
 					<span class="card-item-decoration__text"><?php echo '00' . $i; ?></span>
 				</div>
+
 				<img src="src/images/about/icon.svg" alt="" class="card-item__icon">
+
 				<h3 class="card-item__title">Safety</h3>
+
 				<p class="card-item__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</article>
 		<?php endfor; ?>

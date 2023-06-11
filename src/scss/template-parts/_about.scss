@@ -32,40 +32,56 @@
 		padding: rem-calc(96) rem-calc(260) rem-calc(180) rem-calc(268);
 	}
 
-	.about-decoration {
-		@extend %text-decoration--left;
-
-		@include media('<=phone') {
-			top: rem-calc(400);
-			left: 98%;
-		}
-
-		@include media('<=470px') {
-			left: 96.5%;
-		}
+	.about-cards {
+		@extend %mobile-max-wrapper;
 
 		@include media('>phone') {
-			top: rem-calc(8);
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 56%;
+			padding-top: rem-calc(20);
 		}
 
-		@include media('>tablet') {
-			top: rem-calc(10);
+		@include media('>desktop-small') {
+			padding-top: rem-calc(40);
 		}
 
 		@include media('>desktop-medium') {
-			top: rem-calc(12);
+			padding-top: rem-calc(40);
 		}
 
-		&__label {
-			@extend %text-decoration__label--light;
-
-			&-inner {
-				@extend %text-decoration__label-inner--light;
+		.card-item {
+			@include media('>phone') {
+				width: 45%;
 			}
-		}
 
-		&__number {
-			@extend %text-decoration__number--light;
+			@include media('>desktop-small') {
+				width: 47%;
+				margin-bottom: rem-calc(52);
+			}
+
+			@include media('>desktop-medium') {
+				margin-bottom: rem-calc(66);
+			}
+
+			@include media('>desktop-large') {
+				margin-bottom: rem-calc(84);
+			}
+
+			&:nth-child(2n+1) {
+				margin-top: -220px;
+
+				&:last-child {
+					margin-top: -110px;
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -182,48 +198,40 @@
 		}
 	}
 
-	.about-cards {
-		@extend %mobile-max-wrapper;
+	.about-decoration {
+		@extend %text-decoration--left;
 
-		@include media('>phone') {
-			display: flex;
-			align-content: center;
-			align-items: center;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			width: 56%;
-			padding-top: rem-calc(20);
+		@include media('<=phone') {
+			top: rem-calc(400);
+			left: 98%;
 		}
 
-		@include media('>desktop-small') {
-			padding-top: rem-calc(40);
+		@include media('<=470px') {
+			left: 96.5%;
+		}
+
+		@include media('>phone') {
+			top: rem-calc(8);
+		}
+
+		@include media('>tablet') {
+			top: rem-calc(10);
 		}
 
 		@include media('>desktop-medium') {
-			padding-top: rem-calc(40);
+			top: rem-calc(12);
 		}
 
-		.card-item {
-			@include media('>phone') {
-				width: 45%;
-			}
+		&__label {
+			@extend %text-decoration__label--light;
 
-			@include media('>desktop-small') {
-				width: 47%;
-				margin-bottom: rem-calc(52);
+			&-inner {
+				@extend %text-decoration__label-inner--light;
 			}
+		}
 
-			@include media('>desktop-medium') {
-				margin-bottom: rem-calc(66);
-			}
-
-			@include media('>desktop-large') {
-				margin-bottom: rem-calc(84);
-			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+		&__number {
+			@extend %text-decoration__number--light;
 		}
 	}
 }
