@@ -1,8 +1,8 @@
 .testimonials {
 	@extend %content__area--dark;
 
-	position: relative;
 	overflow: hidden;
+	position: relative;
 
 	&::before {
 		content: '';
@@ -71,178 +71,19 @@
 		}
 	}
 
-	&-large-decoration {
-		@extend %text-decoration__large--right;
-
-		top: rem-calc(730);
-		right: rem-calc(26);
-		z-index: 2;
-
-		@include media('>phone-small') {
-			top: rem-calc(684);
-		}
-
-		@include media('>phone') {
-			top: rem-calc(688);
-			right: rem-calc(115);
-		}
-
-		@include media('>tablet') {
-			top: rem-calc(774);
-			right: rem-calc(125);
-		}
-
-		@include media('>desktop-small') {
-			top: rem-calc(948);
-			right: rem-calc(155);
-		}
-
-		@include media('>desktop-medium') {
-			top: rem-calc(1046);
-			right: rem-calc(165);
-		}
-
-		@include media('>desktop-large') {
-			top: rem-calc(1152);
-			right: rem-calc(170);
-		}
-
-		@include media('>desktop-xlarge') {
-			top: rem-calc(1195);
-			right: rem-calc(173);
-		}
-
-		&__text {
-			@extend %text-decoration__large-label--dark;
-
-			font-size: rem-calc(72);
-
-			@include media('>phone-small') {
-				font-size: rem-calc(67);
-			}
-
-			@include media('>phone') {
-				font-size: rem-calc(68);
-			}
-
-			@include media('>tablet') {
-				font-size: rem-calc(76);
-			}
-
-			@include media('>desktop-small') {
-				font-size: rem-calc(94);
-			}
-
-			@include media('>desktop-medium') {
-				font-size: rem-calc(104);
-			}
-
-			@include media('>desktop-large') {
-				font-size: rem-calc(114);
-			}
-
-			@include media('>desktop-xlarge') {
-				font-size: rem-calc(118);
-			}
-		}
-	}
-
-	&-decoration {
-		@extend %text-decoration--right;
-
-		z-index: 2;
-
-		@include media('<=phone') {
-			top: 19%;
-			right: 99%;
-		}
-
-		@include media('<=600px') {
-			right: 98%;
-		}
-
-		@include media('>phone') {
-			top: 20%;
-		}
-
-		&__label {
-			@extend %text-decoration__label--dark;
-
-			&-inner {
-				@extend %text-decoration__label-inner--dark;
-			}
-		}
-
-		&__number {
-			@extend %text-decoration__number--dark;
-
-			@include media('<=phone') {
-				color: $color-licorice;
-			}
-		}
-	}
-
-	&-header {
-		position: relative;
-		z-index: 4;
-		text-align: center;
-		margin-bottom: rem-calc(47);
-
-		@include media('>tablet') {
-			margin-bottom: rem-calc(70);
-		}
-
-		@include media('>desktop-small') {
-			margin-bottom: rem-calc(90);
-		}
-
-		@include media('>desktop-medium') {
-			margin-bottom: rem-calc(110);
-		}
-
-		@include media('>desktop-large') {
-			margin-bottom: rem-calc(130);
-		}
-
-		@include media('>desktop-xlarge') {
-			margin-bottom: rem-calc(150);
-		}
-
-		&__subtitle {
-			@extend %header__subtitle--light;
-
-			margin-bottom: rem-calc(15);
-
-			@include media('>desktop-small') {
-				margin-bottom: rem-calc(18);
-			}
-
-			@include media('>desktop-medium') {
-				margin-bottom: rem-calc(20);
-			}
-
-			@include media('>desktop-large') {
-				margin-bottom: rem-calc(24);
-			}
-		}
-
-		&__title {
-			@extend %header__title--light;
-		}
-	}
-
 	&-carousel {
 		position: relative;
 		z-index: 4;
-        width: 100%;
-        max-width: 100%;
+		width: 100%;
+		max-width: 100%;
 		margin-bottom: rem-calc(31);
 
 		&__item {
-			position: relative;
+			background-color: #fff;
 			margin: rem-calc(15) 7px;
-			text-align: center;
 			padding: rem-calc(47) rem-calc(15) rem-calc(25);
+			position: relative;
+			text-align: center;
 
 			@include media('>499px') {
 				padding-left: rem-calc(60);
@@ -275,18 +116,22 @@
 			}
 
 			&::before {
-				content: '';
-				position: absolute;
-				top: 0;
+				// TODO | change to SVG image
+				//background-image: url('../images/testimonials/quotes-icon.svg');
+				background-position: center top;
+				background-repeat: no-repeat;
+				background-size: contain;
+				color: $color-mediumgray;
+				content: '❝';
+				font-size: 80px;
+				height: rem-calc(40);
 				left: 50%;
-				z-index: 4;
+				line-height: 1;
+				position: absolute;
+				top: -6px;
 				transform: translate(-50%, -30%);
 				width: rem-calc(32);
-				height: rem-calc(40);
-				background-image: url('../images/testimonials/quotes-icon.svg');
-				background-position: center top;
-				background-size: contain;
-				background-repeat: no-repeat;
+				z-index: 4;
 
 				@include media('>desktop-small') {
 					width: rem-calc(41);
@@ -443,12 +288,12 @@
 				@extend %carousel-nav-button--prev;
 			}
 
-		     &--next {
+			&--next {
 				@extend %carousel-nav-button--next;
 			}
 		}
 
-        &__pagination-count {
+		&__pagination-count {
 			@extend %pagination-count;
 
 			&--total {
@@ -456,17 +301,176 @@
 			}
 		}
 	}
-}
 
+	&-decoration {
+		@extend %text-decoration--right;
+
+		z-index: 2;
+
+		@include media('<=phone') {
+			top: 19%;
+			right: 99%;
+		}
+
+		@include media('<=600px') {
+			right: 98%;
+		}
+
+		@include media('>phone') {
+			top: 20%;
+		}
+
+		&__label {
+			@extend %text-decoration__label--dark;
+
+			&-inner {
+				@extend %text-decoration__label-inner--dark;
+			}
+		}
+
+		&__number {
+			@extend %text-decoration__number--dark;
+
+			@include media('<=phone') {
+				color: $color-licorice;
+			}
+		}
+	}
+
+	&-header {
+		position: relative;
+		z-index: 4;
+		text-align: center;
+		margin-bottom: rem-calc(47);
+
+		@include media('>tablet') {
+			margin-bottom: rem-calc(70);
+		}
+
+		@include media('>desktop-small') {
+			margin-bottom: rem-calc(90);
+		}
+
+		@include media('>desktop-medium') {
+			margin-bottom: rem-calc(110);
+		}
+
+		@include media('>desktop-large') {
+			margin-bottom: rem-calc(130);
+		}
+
+		@include media('>desktop-xlarge') {
+			margin-bottom: rem-calc(150);
+		}
+
+		&__subtitle {
+			@extend %header__subtitle--light;
+
+			margin-bottom: rem-calc(15);
+
+			@include media('>desktop-small') {
+				margin-bottom: rem-calc(18);
+			}
+
+			@include media('>desktop-medium') {
+				margin-bottom: rem-calc(20);
+			}
+
+			@include media('>desktop-large') {
+				margin-bottom: rem-calc(24);
+			}
+		}
+
+		&__title {
+			@extend %header__title--light;
+		}
+	}
+
+	&-large-decoration {
+		@extend %text-decoration__large--right;
+
+		top: rem-calc(730);
+		right: rem-calc(26);
+		z-index: 2;
+
+		@include media('>phone-small') {
+			top: rem-calc(684);
+		}
+
+		@include media('>phone') {
+			top: rem-calc(688);
+			right: rem-calc(115);
+		}
+
+		@include media('>tablet') {
+			top: rem-calc(774);
+			right: rem-calc(125);
+		}
+
+		@include media('>desktop-small') {
+			top: rem-calc(948);
+			right: rem-calc(155);
+		}
+
+		@include media('>desktop-medium') {
+			top: rem-calc(1046);
+			right: rem-calc(165);
+		}
+
+		@include media('>desktop-large') {
+			top: rem-calc(1152);
+			right: rem-calc(170);
+		}
+
+		@include media('>desktop-xlarge') {
+			top: rem-calc(1195);
+			right: rem-calc(173);
+		}
+
+		&__text {
+			@extend %text-decoration__large-label--dark;
+
+			font-size: rem-calc(72);
+
+			@include media('>phone-small') {
+				font-size: rem-calc(67);
+			}
+
+			@include media('>phone') {
+				font-size: rem-calc(68);
+			}
+
+			@include media('>tablet') {
+				font-size: rem-calc(76);
+			}
+
+			@include media('>desktop-small') {
+				font-size: rem-calc(94);
+			}
+
+			@include media('>desktop-medium') {
+				font-size: rem-calc(104);
+			}
+
+			@include media('>desktop-large') {
+				font-size: rem-calc(114);
+			}
+
+			@include media('>desktop-xlarge') {
+				font-size: rem-calc(118);
+			}
+		}
+	}
+}
 
 /** Remove These Fixes **/
 .testimonials-carousel {
-	position: relative;
 	left: 50%;
-	z-index: 4;
+	max-width: rem-calc(1500);
+	position: relative;
 	transform: translateX(-51%);
 	width: 263%;
-	max-width: rem-calc(1500);
+	z-index: 4;
 
 	@include media('>tablet') {
 		left: 0;
