@@ -1,14 +1,21 @@
 (function () {
-	const siteNavigation = document.getElementById('navigation');
-	const mobileNavTrigger = document.getElementById('navigation-header-mobile-toggle');
-	const mobileNavTriggerTitle = document.getElementById('navigation-header-mobile-toggle-title');
-	const submenuToggleButtons = document.querySelectorAll('.navigation-menu__submenu-toggle');
-	let mobileMenuOpen = false;
+	const mobileNavTrigger      = document.getElementById('navigation-header-mobile-toggle')
+	const mobileNavTriggerTitle = document.getElementById('navigation-header-mobile-toggle-title')
+	const siteNavigation        = document.getElementById('navigation')
+	const submenuToggleButtons  = document.querySelectorAll('.navigation-menu__submenu-toggle')
+	let mobileMenuOpen          = false
+
+	// toggle mobile menu
+	document.querySelectorAll('.js-mobile-nav-toggle').forEach((e) => {
+		e.addEventListener('click', () => {
+			toggleMobileActive()
+		})
+	})
 
 	// Mobile Menu Toggle Active
 	function toggleMobileActive () {
-		siteNavigation.classList.toggle('navigation--mobile-active');
-		mobileNavTriggerTitle.innerHTML = mobileMenuOpen ? 'Close' : 'Menu';
+		siteNavigation.classList.toggle('navigation--mobile-active')
+		mobileNavTriggerTitle.innerHTML = mobileMenuOpen ? 'Close' : 'Menu'
 	}
 
 	// Toggle Submenu Elements
@@ -56,4 +63,4 @@
 
 	// Add Event Listener to Window to Check if Navigation Has Scrolled
 	window.addEventListener('scroll', handleScroll)
-})();
+})()
