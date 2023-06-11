@@ -79,7 +79,7 @@
 
 			<?php include('social-links.php'); ?>
 
-			<button id="footer-scroll-top" class="footer-navigation__to-top">To Top</button>
+			<a id="footer-scroll-top" class="footer-navigation__to-top js-scroll-to" href="#hero">To Top</a>
 		</div>
 	</div>
 </footer>
