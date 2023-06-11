@@ -162,207 +162,6 @@
 	}
 }
 
-// Footer Company
-.footer-company {
-	@extend %footer__mobile-max;
-
-	text-align: center;
-	margin-bottom: rem-calc(68);
-
-	@include media('>phone') {
-		text-align: left;
-		margin-bottom: 0;
-	}
-
-	&__logo {
-		display: block;
-        width: 100%;
-        max-width: rem-calc(225);
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: rem-calc(20);
-
-		@include media('>phone') {
-			margin-left: 0;
-			margin-bottom: rem-calc(10);
-			margin-top: rem-calc(9);
-		}
-
-		@include media('>tablet') {
-			margin-top: rem-calc(12);
-		}
-
-		@include media('>desktop-large') {
-			margin-top: rem-calc(16);
-		}
-	}
-
-	&__copyright {
-		display: block;
-		margin-bottom: rem-calc(32);
-		font-size: rem-calc(9);
-		letter-spacing: 0.85px;
-		text-transform: uppercase;
-
-		@include media('>tablet') {
-			margin-bottom: rem-calc(36);
-		}
-
-		@include media('>desktop-small') {
-			margin-bottom: rem-calc(40);
-		}
-	}
-
-	&__info {
-		font-size: rem-calc(12);
-		font-weight: 300;
-		line-height: 1.5;
-		letter-spacing: 0.45px;
-		margin-bottom: rem-calc(32);
-
-		@include media('>tablet') {
-			margin-bottom: rem-calc(36);
-		}
-
-		@include media('>desktop-small') {
-			margin-bottom: rem-calc(40);
-		}
-	}
-
-	&__cta {
-		@extend %site-button--underscored;
-	}
-}
-
-// Footer Services
-.footer-services {
-	@extend %footer__mobile-max;
-
-	margin-bottom: rem-calc(66);
-
-	@include media('>phone') {
-		margin-bottom: rem-calc(20);
-	}
-
-	@include media('>tablet') {
-		margin-bottom: rem-calc(26);
-	}
-
-	@include media('>desktop-small') {
-		margin-bottom: rem-calc(32);
-	}
-
-	&__header {
-		@extend %strikethrough-header;
-
-		text-align: center;
-		margin-bottom: rem-calc(16);
-
-		@include media('>phone-small') {
-			display: flex;
-			align-self: center;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		@include media('>phone') {
-			margin-bottom: rem-calc(20);
-		}
-
-		@include media('>tablet') {
-			margin-bottom: rem-calc(24);
-		}
-
-		@include media('>desktop-small') {
-			margin-bottom: rem-calc(28);
-		}
-
-		&-title {
-			@extend %strikethrough-header__title;
-
-			@include media('>phone-small') {
-				padding-left: 0;
-			}
-		}
-
-		&-link {
-			@extend %strikethrough-header__link;
-
-			display: none;
-
-			@include media('>phone-small') {
-				display: inline-block;
-				padding-right: 2px;
-			}
-		}
-	}
-
-
-	&__list {
-		&-item {
-			@extend %arrow-block-button;
-
-			margin-bottom: rem-calc(14);
-
-			@include media('>phone') {
-				margin-bottom: 0;
-				width: calc(33.333% - 10px);
-				margin-left: 5px;
-				margin-right: 5px;
-			}
-
-			@include media('>desktop-small') {
-				width: calc(33.333% - 26px);
-				margin-left: rem-calc(13);
-				margin-right: rem-calc(13);
-				min-height: rem-calc(75);
-			}
-
-			&:first-child {
-				@include media('>phone') {
-					margin-left: 0;
-				}
-			}
-
-			&:last-child {
-				@include media('>phone') {
-					margin-right: 0;
-				}
-			}
-		}
-
-		&-link {
-			@extend %arrow-block-button__link;
-
-			&:before,
-			&:after {
-				@include media('>phone', '<=tablet') {
-					display: none;
-				}
-			}
-		}
-
-		&-icon {
-			@extend %arrow-block-button__icon;
-		}
-
-		&-label {
-			@extend %arrow-block-button__label;
-		}
-	}
-
-	&__cta {
-		@extend %site-button;
-
-		width: 100%;
-		margin-top: rem-calc(30);
-
-		@include media('>phone') {
-			display: none;
-		}
-	}
-}
-
 // Footer Brands
 .footer-brands {
 	@extend %footer__mobile-max;
@@ -466,6 +265,78 @@
 				width: rem-calc(113);
 			}
 		}
+	}
+}
+
+// Footer Company
+.footer-company {
+	@extend %footer__mobile-max;
+
+	text-align: center;
+	margin-bottom: rem-calc(68);
+
+	@include media('>phone') {
+		text-align: left;
+		margin-bottom: 0;
+	}
+
+	&__logo {
+		display: block;
+        width: 100%;
+        max-width: rem-calc(225);
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: rem-calc(20);
+
+		@include media('>phone') {
+			margin-left: 0;
+			margin-bottom: rem-calc(10);
+			margin-top: rem-calc(9);
+		}
+
+		@include media('>tablet') {
+			margin-top: rem-calc(12);
+		}
+
+		@include media('>desktop-large') {
+			margin-top: rem-calc(16);
+		}
+	}
+
+	&__copyright {
+		display: block;
+		margin-bottom: rem-calc(32);
+		font-size: rem-calc(9);
+		letter-spacing: 0.85px;
+		text-transform: uppercase;
+
+		@include media('>tablet') {
+			margin-bottom: rem-calc(36);
+		}
+
+		@include media('>desktop-small') {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	&__info {
+		font-size: rem-calc(12);
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: 0.45px;
+		margin-bottom: rem-calc(32);
+
+		@include media('>tablet') {
+			margin-bottom: rem-calc(36);
+		}
+
+		@include media('>desktop-small') {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	&__cta {
+		@extend %site-button--underscored;
 	}
 }
 
@@ -597,6 +468,138 @@
 			transform: rotate(-135deg);
 			top: calc(50% - 3px);
 			right: rem-calc(14);
+		}
+	}
+}
+
+// Footer Services
+.footer-services {
+	@extend %footer__mobile-max;
+
+	margin-bottom: rem-calc(66);
+
+	@include media('>phone') {
+		margin-bottom: rem-calc(20);
+	}
+
+	@include media('>tablet') {
+		margin-bottom: rem-calc(26);
+	}
+
+	@include media('>desktop-small') {
+		margin-bottom: rem-calc(32);
+	}
+
+	&__cta {
+		@extend %site-button;
+
+		width: 100%;
+		margin-top: rem-calc(30);
+
+		@include media('>phone') {
+			display: none;
+		}
+	}
+
+	&__header {
+		@extend %strikethrough-header;
+
+		text-align: center;
+		margin-bottom: rem-calc(16);
+
+		@include media('>phone-small') {
+			display: flex;
+			align-self: center;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@include media('>phone') {
+			margin-bottom: rem-calc(20);
+		}
+
+		@include media('>tablet') {
+			margin-bottom: rem-calc(24);
+		}
+
+		@include media('>desktop-small') {
+			margin-bottom: rem-calc(28);
+		}
+
+		&-title {
+			@extend %strikethrough-header__title;
+
+			@include media('>phone-small') {
+				padding-left: 0;
+			}
+		}
+
+		&-link {
+			@extend %strikethrough-header__link;
+
+			display: none;
+
+			@include media('>phone-small') {
+				display: inline-block;
+				padding-right: 2px;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&-item {
+			@extend %arrow-block-button;
+
+			margin-bottom: rem-calc(14);
+
+			@include media('>phone') {
+				margin-bottom: 0;
+				width: calc(33.333% - 10px);
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			@include media('>desktop-small') {
+				width: calc(33.333% - 26px);
+				margin-left: rem-calc(13);
+				margin-right: rem-calc(13);
+				min-height: rem-calc(75);
+			}
+
+			&:first-child {
+				@include media('>phone') {
+					margin-left: 0;
+				}
+			}
+
+			&:last-child {
+				@include media('>phone') {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&-link {
+			@extend %arrow-block-button__link;
+
+			&:before,
+			&:after {
+				@include media('>phone', '<=tablet') {
+					display: none;
+				}
+			}
+		}
+
+		&-icon {
+			@extend %arrow-block-button__icon;
+		}
+
+		&-label {
+			@extend %arrow-block-button__label;
 		}
 	}
 }
