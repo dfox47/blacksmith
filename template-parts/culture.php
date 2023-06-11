@@ -14,15 +14,13 @@
 
 		<div class="culture__content culture-content ">
 			<header class="culture__header culture-header">
-				<span class="culture-header__subtitle">Current Openings</span>
-				<h2 class="culture-header__title">Open Roles</h2>
+				<span class="culture-header__subtitle">People making a difference</span>
+				<h2 class="culture-header__title">Company culture</h2>
 			</header>
 
 			<strong class="culture-content__featured">Lorem ipsum dolor sit amet, consectetur adipisp quis nostrud exercitation.</strong>
 
 			<p class="culture-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa.</p>
-
-			<a href="#" class="culture-content__button">View All Open Roles</a>
 		</div>
 	</div>
 </section>
