@@ -227,13 +227,13 @@
 }
 
 %dots-pattern {
+	background-image: url(/src/images/general/dots.svg);
+	background-position: center;
+	background-size: rem-calc(100);
 	content: '';
 	display: block;
 	position: absolute;
 	z-index: 1;
-	background-image: url(../images/general/dots.svg);
-	background-size: rem-calc(100);
-	background-position: center;
 
 	@include media('>phone') {
 		background-size: rem-calc(125);

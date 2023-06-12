@@ -116,19 +116,16 @@
 			}
 
 			&::before {
-				// TODO | change to SVG image
-				//background-image: url('../images/testimonials/quotes-icon.svg');
+				background-image: url('/src/images/testimonials/quotes-icon.svg');
 				background-position: center top;
 				background-repeat: no-repeat;
 				background-size: contain;
 				color: $color-mediumgray;
-				content: '❝';
-				font-size: 80px;
+				content: '';
 				height: rem-calc(40);
 				left: 50%;
-				line-height: 1;
 				position: absolute;
-				top: -6px;
+				top: 5px;
 				transform: translate(-50%, -30%);
 				width: rem-calc(32);
 				z-index: 4;
