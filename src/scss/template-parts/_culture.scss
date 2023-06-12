@@ -9,6 +9,14 @@
 		background-color: $color-mine_shaft;
 		margin: rem-calc(-50) rem-calc(20) 0 0;
 		padding: rem-calc(120) rem-calc(35) rem-calc(80) rem-calc(40);
+		position: relative;
+		z-index: 5;
+
+		@include media('>desktop-large') {
+			margin: 0 0 0 rem-calc(300);
+			max-width: rem-calc(680);
+			padding: rem-calc(147) rem-calc(130) rem-calc(150) rem-calc(166);
+		}
 	}
 
 	&__image {
@@ -25,6 +33,15 @@
 		@include media('>phone-small') {
 			margin-bottom: 0;
 			width: 49.6%;
+		}
+
+		@include media('>desktop-large') {
+			height: 100%;
+			left: 0;
+			margin: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
 		}
 
 		&::before {
@@ -78,6 +95,13 @@
 
 			@include media('>desktop-small') {
 				margin: 0;
+			}
+
+			@include media('>desktop-large') {
+				bottom: 16.6%;
+				left: 10.9%;
+				position: absolute;
+				width: 32.9%;
 			}
 		}
 	}
@@ -176,11 +200,9 @@
 		}
 
 		@include media('>desktop-large') {
-			padding: rem-calc(115) rem-calc(160) rem-calc(125) rem-calc(300);
-		}
-
-		@include media('>desktop-xlarge') {
-			padding: rem-calc(123) rem-calc(224) rem-calc(135) rem-calc(335);
+			display: flex;
+			justify-content: center;
+			padding: rem-calc(280) rem-calc(160) rem-calc(325) rem-calc(300);
 		}
 	}
 
@@ -237,11 +259,7 @@
 		}
 
 		@include media('>desktop-large') {
-			margin-bottom: rem-calc(130);
-		}
-
-		@include media('>desktop-xlarge') {
-			margin-bottom: rem-calc(150);
+			margin-bottom: rem-calc(24);
 		}
 
 		&__subtitle {
@@ -258,7 +276,7 @@
 			}
 
 			@include media('>desktop-large') {
-				margin-bottom: rem-calc(24);
+				margin-bottom: rem-calc(12);
 			}
 		}
 
