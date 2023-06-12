@@ -1,4 +1,6 @@
 .culture {
+	@extend %content__area--dark;
+
 	overflow: hidden;
 	position: relative;
 	padding-bottom: rem-calc(74);
@@ -41,24 +43,37 @@
 	}
 
 	&-decoration {
-		@extend %text-decoration--left;
+		@extend %text-decoration--right;
 
 		z-index: 2;
 
+		@include media('<=phone') {
+			top: 19%;
+			right: 99%;
+		}
+
+		@include media('<=600px') {
+			right: 98%;
+		}
+
 		@include media('>phone') {
-			top: 28%;
+			top: 20%;
 		}
 
 		&__label {
-			@extend %text-decoration__label--light;
+			@extend %text-decoration__label--dark;
 
 			&-inner {
-				@extend %text-decoration__label-inner--light;
+				@extend %text-decoration__label-inner--dark;
 			}
 		}
 
 		&__number {
-			@extend %text-decoration__number--light;
+			@extend %text-decoration__number--dark;
+
+			@include media('<=phone') {
+				color: $color-licorice;
+			}
 		}
 	}
 }
