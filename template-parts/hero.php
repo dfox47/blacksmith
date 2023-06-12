@@ -7,16 +7,16 @@
 		<div class="hero__media">
 			<div class="hero__media-main">
 				<picture class="hero__picture hero__picture-main">
-					<img src="src/images/hero/main.jpg" alt="" class="hero__image">
+					<img src="/src/images/hero/main.jpg" alt="" class="hero__image">
 				</picture>
 			</div>
 
 			<picture class="hero__picture hero__picture-top">
-				<img src="src/images/hero/top.jpg" alt="" class="hero__image">
+				<img src="/src/images/hero/top.jpg" alt="" class="hero__image">
 			</picture>
 
 			<picture class="hero__picture hero__picture-bottom">
-				<img src="src/images/hero/bottom.jpg" alt="" class="hero__image">
+				<img src="/src/images/hero/bottom.jpg" alt="" class="hero__image">
 			</picture>
 		</div>
 
