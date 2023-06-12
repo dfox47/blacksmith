@@ -2,9 +2,7 @@
 	<div class="navigation__inner">
 		<div class="navigation__header navigation-header">
 			<div id="navigation-header" class="navigation-header__company">
-				<a href="/" class="navigation-header__company-link">
-					<img src="src/images/general/logo.png" alt="Company Logo" class="navigation-header__company-logo">
-				</a>
+				<a href="/" class="navigation-header__company-link"><img src="/src/images/general/logo.png" alt="Company Logo" class="navigation-header__company-logo"></a>
 
 				<button id="navigation-header-mobile-toggle" class="navigation-header__mobile-toggle">
 					<span id="navigation-header-mobile-toggle-title" class="navigation-header__mobile-toggle-title">Menu</span>
