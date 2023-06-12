@@ -63,10 +63,10 @@
 			}
 
 			@include media('>desktop-large') {
-				height: 58.5%;
-				left: -18.5%;
-				top: 16%;
-				width: 117.5%;
+				height: 49.2%;
+				left: 30.8%;
+				top: 29.2%;
+				width: 31.4%;
 			}
 		}
 
@@ -91,6 +91,14 @@
 					top: 21.5%;
 					width: 26%;
 				}
+
+				@include media('>desktop-large') {
+					bottom: -6%;
+					left: auto;
+					right: -5%;
+					top: auto;
+					width: 93%;
+				}
 			}
 
 			@include media('>desktop-small') {
@@ -114,6 +122,13 @@
 
 			position: relative;
 			z-index: 3;
+
+			&::before {
+				@extend %image__color-burn--left;
+
+				width: 18.2%;
+				z-index: 3;
+			}
 		}
 
 		&-side {
@@ -133,10 +148,24 @@
 				top: 10%;
 				width: 100%;
 				z-index: 1;
+
+				@include media('>desktop-large') {
+					height: 97%;
+					left: -10%;
+					top: 13%;
+					width: 77%;
+				}
 			}
 
 			@include media('>desktop-small') {
 				display: block;
+			}
+
+			@include media('>desktop-large') {
+				left: auto;
+				right: 11%;
+				top: 15.4%;
+				width: 12%;
 			}
 		}
 
@@ -164,11 +193,23 @@
 				@include media('>desktop-small') {
 					display: block;
 				}
+
+				@include media('>desktop-large') {
+					right: -7%;
+					top: -14%;
+					width: 50%;
+				}
 			}
 
 			@include media('>desktop-small') {
 				height: auto;
 				overflow: visible;
+			}
+
+			@include media('>desktop-large') {
+				left: 18.4%;
+				top: 15.5%;
+				width: 19.5%;
 			}
 
 			.culture__image {
@@ -226,6 +267,10 @@
 
 		@include media('>desktop-small') {
 			top: 30.6%;
+		}
+
+		@include media('>desktop-large') {
+			top: 33.6%;
 		}
 
 		&__label {
