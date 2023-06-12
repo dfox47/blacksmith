@@ -126,8 +126,13 @@
 			&::before {
 				@extend %image__color-burn--left;
 
+				display: none;
 				width: 18.2%;
 				z-index: 3;
+
+				@include media('>desktop-small') {
+					display: block;
+				}
 			}
 		}
 
