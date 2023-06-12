@@ -812,6 +812,10 @@
 		font-weight: 900;
 		letter-spacing: 0.17px;
 		margin: 0 1em 0 0;
+
+		@include media('>phone-small') {
+			display: none;
+		}
 	}
 
 	&__item {
