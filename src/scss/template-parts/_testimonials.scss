@@ -46,9 +46,9 @@
 	&__wrapper {
 		@extend %site-wrapper;
 
-		position: relative;
-		padding-top: rem-calc(60);
 		padding-bottom: rem-calc(74);
+		padding-top: rem-calc(60);
+		position: relative;
 
 		@include media('>tablet') {
 			padding: rem-calc(70) rem-calc(60) rem-calc(120);

@@ -5,11 +5,139 @@
 	position: relative;
 	padding-bottom: rem-calc(74);
 
+	&__content {
+		background-color: $color-mine_shaft;
+		margin: rem-calc(-50) rem-calc(20) 0 0;
+		padding: rem-calc(120) rem-calc(35) rem-calc(120) rem-calc(40);
+	}
+
+	&__image {
+		@extend %image__cover;
+
+		z-index: 2;
+	}
+
+	&__media {
+		margin: rem-calc(74) 0 0;
+		position: relative;
+		z-index: 2;
+
+		@include media('>phone-small') {
+			margin-bottom: 0;
+			width: 49.6%;
+		}
+
+		&::before {
+			background-color: $color-orange;
+			bottom: 23%;
+			content: "";
+			height: 87%;
+			left: 5.5%;
+			position: absolute;
+			width: 69%;
+			z-index: 1;
+
+			@include media('>phone-small') {
+				height: 57.5%;
+				left: -18%;
+				top: 15.6%;
+				width: 117%;
+				z-index: 1;
+			}
+
+			@include media('>desktop-large') {
+				height: 58.5%;
+				left: -18.5%;
+				top: 16%;
+				width: 117.5%;
+			}
+		}
+
+		&-main {
+			margin: 0 0 0 rem-calc(38);
+			position: relative;
+			width: 100%;
+			z-index: 3;
+
+			&::before,
+			&::after {
+				@extend %dots-pattern;
+
+				z-index: 1;
+			}
+
+			&::after {
+				display: none;
+
+				bottom: -9%;
+				height: 48%;
+				right: -16%;
+				width: 58%;
+
+				@include media('>desktop-large') {
+					height: 30%;
+					left: -10.5%;
+					right: auto;
+					width: 100%;
+				}
+			}
+
+			&::before {
+				height: 55%;
+				left: -5%;
+				top: 39%;
+				width: 14%;
+
+				@include media('>phone-small') {
+					height: 35.5%;
+					left: -11%;
+					top: 21.5%;
+					width: 26%;
+				}
+			}
+		}
+	}
+
+	&__picture {
+		display: block;
+
+		&-main {
+			@include ratio(633, 422);
+
+			position: relative;
+			z-index: 3;
+		}
+
+		&-side {
+			display: none;
+
+			@include media('>desktop-small') {
+				display: block;
+			}
+		}
+
+		&-top {
+			@include ratio(373, 208);
+
+			height: 100px;
+			left: 0;
+			overflow: hidden;
+			position: absolute;
+			top: -34%;
+			width: 29%;
+			z-index: 3;
+
+			.culture__image {
+				max-width: none;
+			}
+		}
+	}
+
 	&__wrapper {
 		@extend %site-wrapper;
 
 		max-width: rem-calc(575);
-		padding: rem-calc(54) rem-calc(14) rem-calc(68);
+		padding: rem-calc(54) 0 rem-calc(10);
 
 		@include media('>phone') {
 			position: relative;
@@ -42,22 +170,27 @@
 		}
 	}
 
+	&-content {
+		&__text {
+			font-weight: 700;
+			line-height: 1.35;
+		}
+	}
+
 	&-decoration {
 		@extend %text-decoration--right;
 
+		top: 14%;
 		z-index: 2;
 
-		@include media('<=phone') {
-			top: 19%;
-			right: 99%;
-		}
+		@include media('<=phone') {}
 
 		@include media('<=600px') {
-			right: 98%;
+			//right: 98%;
 		}
 
 		@include media('>phone') {
-			top: 20%;
+			//top: 20%;
 		}
 
 		&__label {
@@ -70,10 +203,54 @@
 
 		&__number {
 			@extend %text-decoration__number--dark;
+		}
+	}
 
-			@include media('<=phone') {
-				color: $color-licorice;
+	&-header {
+		margin-bottom: rem-calc(9);
+		position: relative;
+		z-index: 4;
+
+		@include media('>tablet') {
+			margin-bottom: rem-calc(70);
+		}
+
+		@include media('>desktop-small') {
+			margin-bottom: rem-calc(90);
+		}
+
+		@include media('>desktop-medium') {
+			margin-bottom: rem-calc(110);
+		}
+
+		@include media('>desktop-large') {
+			margin-bottom: rem-calc(130);
+		}
+
+		@include media('>desktop-xlarge') {
+			margin-bottom: rem-calc(150);
+		}
+
+		&__subtitle {
+			@extend %header__subtitle--light;
+
+			margin-bottom: rem-calc(15);
+
+			@include media('>desktop-small') {
+				margin-bottom: rem-calc(18);
 			}
+
+			@include media('>desktop-medium') {
+				margin-bottom: rem-calc(20);
+			}
+
+			@include media('>desktop-large') {
+				margin-bottom: rem-calc(24);
+			}
+		}
+
+		&__title {
+			@extend %header__title--light;
 		}
 	}
 }

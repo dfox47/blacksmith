@@ -56,11 +56,19 @@
 		.card-item {
 			@include media('>phone') {
 				width: 45%;
+
+				&:nth-child(2n+1) {
+					margin-top: -220px;
+
+					&:last-child {
+						margin-top: -110px;
+					}
+				}
 			}
 
 			@include media('>desktop-small') {
-				width: 47%;
 				margin-bottom: rem-calc(52);
+				width: 47%;
 			}
 
 			@include media('>desktop-medium') {
@@ -69,14 +77,6 @@
 
 			@include media('>desktop-large') {
 				margin-bottom: rem-calc(84);
-			}
-
-			&:nth-child(2n+1) {
-				margin-top: -220px;
-
-				&:last-child {
-					margin-top: -110px;
-				}
 			}
 
 			&:last-child {
