@@ -1,4 +1,4 @@
-<div id="navigation" class="navigation navigation--mobile-active">
+<div id="navigation" class="navigation">
 	<div class="navigation__inner">
 		<div class="navigation__header navigation-header">
 			<div id="navigation-header" class="navigation-header__company">
