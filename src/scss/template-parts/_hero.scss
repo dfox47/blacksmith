@@ -45,6 +45,13 @@
 				width: 117%;
 				height: 57.5%;
 			}
+
+			@include media('>desktop-large') {
+				height: 58.5%;
+				left: -18.5%;
+				top: 16%;
+				width: 117.5%;
+			}
 		}
 
 		&-main {
@@ -67,6 +74,13 @@
 				height: 48%;
 				right: -16%;
 				width: 58%;
+
+				@include media('>desktop-large') {
+					height: 30%;
+					left: -10.5%;
+					right: auto;
+					width: 100%;
+				}
 			}
 
 			&::before {
@@ -113,6 +127,12 @@
 		&-bottom {
 			bottom: 14px;
 			left: -16px;
+
+			@include media('>desktop-large') {
+				bottom: 38px;
+				left: -22px;
+				width: 31%;
+			}
 		}
 
 		&-top {
@@ -132,6 +152,12 @@
 					width: 63%;
 					height: 20%;
 				}
+			}
+
+			@include media('>desktop-large') {
+				right: -30px;
+				top: 56px;
+				width: 31%;
 			}
 		}
 	}
@@ -201,8 +227,9 @@
 		}
 
 		@include media('>desktop-large') {
-			width: 37%;
+			padding-top: 10px;
 			margin-bottom: rem-calc(30);
+			width: 37%;
 		}
 
 		@include media('>desktop-xlarge') {
