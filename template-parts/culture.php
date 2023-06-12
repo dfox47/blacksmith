@@ -2,11 +2,11 @@
 	<div class="culture__wrapper">
 		<div class="culture__decoration culture-decoration" aria-hidden="true">
 			<div class="culture-decoration__label">
-				<span class="culture-decoration__label-inner">Company</span>
+				<span class="culture-decoration__label-inner">Culture</span>
 			</div>
 
 			<div class="culture-decoration__label">
-				<span class="culture-decoration__label-inner">Culture</span>
+				<span class="culture-decoration__label-inner">Company</span>
 			</div>
 
 			<span class="culture-decoration__number">002</span>

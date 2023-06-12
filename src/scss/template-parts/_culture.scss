@@ -3,12 +3,12 @@
 
 	overflow: hidden;
 	position: relative;
-	padding-bottom: rem-calc(74);
+	padding-bottom: rem-calc(0);
 
 	&__content {
 		background-color: $color-mine_shaft;
 		margin: rem-calc(-50) rem-calc(20) 0 0;
-		padding: rem-calc(120) rem-calc(35) rem-calc(120) rem-calc(40);
+		padding: rem-calc(120) rem-calc(35) rem-calc(80) rem-calc(40);
 	}
 
 	&__image {
@@ -59,34 +59,14 @@
 			width: 100%;
 			z-index: 3;
 
-			&::before,
-			&::after {
+			&::before {
 				@extend %dots-pattern;
 
-				z-index: 1;
-			}
-
-			&::after {
-				display: none;
-
-				bottom: -9%;
-				height: 48%;
-				right: -16%;
-				width: 58%;
-
-				@include media('>desktop-large') {
-					height: 30%;
-					left: -10.5%;
-					right: auto;
-					width: 100%;
-				}
-			}
-
-			&::before {
 				height: 55%;
 				left: -5%;
 				top: 39%;
 				width: 14%;
+				z-index: 1;
 
 				@include media('>phone-small') {
 					height: 35.5%;
@@ -94,6 +74,10 @@
 					top: 21.5%;
 					width: 26%;
 				}
+			}
+
+			@include media('>desktop-small') {
+				margin: 0;
 			}
 		}
 	}
@@ -109,7 +93,23 @@
 		}
 
 		&-side {
+			@include ratio(184, 252);
+
 			display: none;
+			left: 110%;
+			position: absolute;
+			top: -10%;
+			width: 30%;
+
+			&::before {
+				@extend %dots-pattern;
+
+				height: 100%;
+				left: -12%;
+				top: 10%;
+				width: 100%;
+				z-index: 1;
+			}
 
 			@include media('>desktop-small') {
 				display: block;
@@ -127,6 +127,26 @@
 			width: 29%;
 			z-index: 3;
 
+			&::before {
+				@extend %dots-pattern;
+
+				display: none;
+				height: 100%;
+				right: -18%;
+				top: -25%;
+				width: 70%;
+				z-index: 1;
+
+				@include media('>desktop-small') {
+					display: block;
+				}
+			}
+
+			@include media('>desktop-small') {
+				height: auto;
+				overflow: visible;
+			}
+
 			.culture__image {
 				max-width: none;
 			}
@@ -136,17 +156,11 @@
 	&__wrapper {
 		@extend %site-wrapper;
 
-		max-width: rem-calc(575);
 		padding: rem-calc(54) 0 rem-calc(10);
 
 		@include media('>phone') {
-			position: relative;
-			display: flex;
-			align-content: center;
-			align-items: center;
-			justify-content: space-between;
-			max-width: rem-calc(1920);
 			padding: rem-calc(60) rem-calc(30) rem-calc(60) rem-calc(120);
+			position: relative;
 		}
 
 		@include media('>tablet') {
@@ -174,6 +188,7 @@
 		&__text {
 			font-weight: 700;
 			line-height: 1.35;
+			letter-spacing: -.03em;
 		}
 	}
 
@@ -183,14 +198,12 @@
 		top: 14%;
 		z-index: 2;
 
-		@include media('<=phone') {}
-
-		@include media('<=600px') {
-			//right: 98%;
+		@include media('>phone') {
+			top: 25%;
 		}
 
-		@include media('>phone') {
-			//top: 20%;
+		@include media('>desktop-small') {
+			top: 30.6%;
 		}
 
 		&__label {
