@@ -1,4 +1,8 @@
 .culture {
+	overflow: hidden;
+	position: relative;
+	padding-bottom: rem-calc(74);
+
 	&__wrapper {
 		@extend %site-wrapper;
 
